@@ -2,11 +2,15 @@
 
 
 
-A backend-driven data analysis system to upload, analyze, and track chemical equipment datasets using Python, Pandas, and Django REST Framework.
+A full-stack data analysis and visualization system for chemical equipment datasets.
 
-This project processes CSV files containing chemical equipment parameters and generates statistical summaries through REST APIs.
+The project enables users to upload CSV files, perform automated statistical analysis, and visualize insights through a web dashboard and desktop application.
 
-###### 
+
+
+This system simulates a real-world industrial data pipeline used in chemical process monitoring and equipment analysis.
+
+
 
 ###### **Project Objective**
 
@@ -18,7 +22,6 @@ To design and develop a system that:
 
 * Accepts CSV datasets of chemical equipment
 * Analyzes key operational parameters
-* Stores analysis history in a database
 * Exposes results through REST APIs
 * Provides a foundation for visualization and decision-support tools
 
@@ -38,13 +41,13 @@ The project simulates a real-world industrial data pipeline used in chemical pro
 
 
 
-&nbsp;	Total equipment count
+ 	Total equipment count
 
-&nbsp;	Average flow rate
+ 	Average flow rate
 
-&nbsp;	Average pressure
+ 	Average pressure
 
-&nbsp;	Average temperature
+ 	Average temperature
 
 
 
@@ -52,7 +55,36 @@ The project simulates a real-world industrial data pipeline used in chemical pro
 * Stores historical analysis results
 * History retrieval API
 * Django admin panel for monitoring
-* Modular architecture with separate data engine and backend
+* Modular architecture with separate data engine and backend API Layer
+
+
+
+###### **Frontend (Web Dashboard)**
+
+
+
+* Modern React-based dashboard
+* CSV upload interface
+* Displays computed metrics in cards
+* Equipment type distribution chart
+* Clean, professional UI suitable for presentations
+* Communicates with backend via REST APIs
+* Desktop Application
+* Desktop interface built using PyQt
+* CSV upload and analysis
+* Displays results in a standalone GUI
+* Uses the same backend API as the web app
+
+
+
+###### **Desktop Application**
+
+
+
+* Desktop interface built using PyQt
+* CSV upload and analysis
+* Displays results in a standalone GUI
+* Uses the same backend API as the web app
 
 
 
@@ -64,23 +96,45 @@ Chemical-Equipment-Visualizer/
 
 │
 
-├── data\_logic/          # Core data analysis engine (Pandas)
+├── data\_logic/                # Core data analysis engine (Pandas)
 
 │   └── analyzer.py
 
 │
 
-├── backend/server/      # Django backend
+├── backend/
 
-│   ├── equipment/       # API and models
+│   └── server/                # Django backend
 
-│   ├── server/          # Project settings
+│       ├── equipment/         # API, models, serializers
 
-│   └── manage.py
+│       ├── server/            # Project settings
+
+│       └── manage.py
 
 │
 
-└── .gitignore
+├── frontend/                  # React frontend
+
+│   ├── src/
+
+│   │   ├── components/
+
+│   │   ├── pages/
+
+│   │   └── App.js
+
+│   └── package.json
+
+│
+
+├── desktop/                   # PyQt desktop application
+
+│   └── app.py
+
+│
+
+└── README.md
 
 
 
@@ -90,12 +144,58 @@ Chemical-Equipment-Visualizer/
 
 
 
+**Backend**
+
 * Python 3
 * Pandas
 * Django
 * Django REST Framework
 * SQLite
 * Git and GitHub
+
+
+
+**Frontend**
+
+* React.js
+* HTML, CSS
+* Chart.js
+
+
+
+**Desktop**
+
+* Python
+* PyQt5
+
+
+
+**Tools**
+
+* Git \& GitHub
+
+
+
+###### **CSV File Format**
+
+
+
+The uploaded CSV file should contain columns similar to:
+
+Equipment\_Name, Equipment\_Type, Flowrate, Pressure, Temperature
+
+
+
+**Example Equipment Types:**
+
+
+
+* Pump
+* Compressor
+* Valve
+* Heat Exchanger
+* Reactor
+* Condenser
 
 
 
@@ -132,39 +232,23 @@ curl -X POST -F "file=@sample\_equipment\_data.csv" http://127.0.0.1:8000/api/up
 
 
 
-###### **Analysis History**
-
-
-
-GET /api/history/
-
-
-
-
-
-Returns previously analyzed dataset summaries stored in the database.
-
-
-
-This API is used to maintain upload history and enable future dashboard features.
-
 
 
 ###### **How to Run the Project**
 
 
 
-1. Clone the repository
+1. **Clone the Repository**
 
 
 
-git clone https://github.com/your-username/Chemical-Equipment-Visualizer.git
+git clone https://github.com/siddhu-212/Chemical-Equipment-Visualizer.git
 
 cd Chemical-Equipment-Visualizer
 
 
 
-2\. Create virtual environment
+2\. **Backend Setup (Django)**
 
 
 
@@ -172,41 +256,53 @@ python -m venv env
 
 env\\Scripts\\activate
 
-
-
-3\. Install dependencies
-
-
-
 pip install django djangorestframework pandas
-
-
-
-4\. Run migrations
-
-
 
 cd backend/server
 
 python manage.py migrate
 
-
-
-5\. Start the server
-
-
-
 python manage.py runserver
 
 
 
-
-
-Server will run at:
-
-
+Backend runs at:
 
 http://127.0.0.1:8000/
+
+
+
+
+
+3\. **Frontend Setup (React)**
+
+
+
+cd frontend
+
+npm install
+
+npm start
+
+
+
+Frontend runs at:
+
+
+
+http://localhost:3000/
+
+
+
+4\. Desktop Application
+
+
+
+cd desktop
+
+pip install pyqt5 requests
+
+python app.py
 
 
 
