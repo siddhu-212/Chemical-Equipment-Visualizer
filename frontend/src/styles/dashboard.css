@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  background: white;
+  padding: 24px 30px;
+  border-radius: 14px;
+  margin-bottom: 40px;
+}
+
+.header p {
+  color: #64748b;
+}
+
+.top-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 30px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.upload-card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.upload-box {
+  display: block;
+  margin-top: 16px;
+  padding: 28px;
+  border: 2px dashed #c7d2fe;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.metric-card h2 {
+  margin: 10px 0 0;
+  font-size: 28px;
+}
+
+.metric-card span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.chart-card {
+  margin-top: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+}
+/* ===== Global ===== */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+/* ===== Layout ===== */
+.dashboard-page {
+  padding: 32px;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Header ===== */
+.dashboard-header {
+  margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+/* ===== Top Section ===== */
+.top-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* ===== Upload Card ===== */
+.upload-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.upload-card p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.upload-box {
+  border: 2px dashed #c7d2fe;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  color: #475569;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background: #f8fafc;
+}
+
+.upload-box:hover {
+  background: #eef2ff;
+}
+
+.upload-box input {
+  display: none;
+}
+
+/* ===== Buttons ===== */
+.primary-btn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Metrics ===== */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.metric-title {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.metric-unit {
+  font-size: 14px;
+  color: #64748b;
+  margin-left: 4px;
+}
+
+/* ===== Charts ===== */
+.chart-card {
+  margin-top: 32px;
+}
+.history-card {
+  margin-top: 40px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.history-table th,
+.history-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+
+.history-table th {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.status-ok {
+  color: #16a34a;
+  font-weight: 600;
+}
